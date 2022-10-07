@@ -14,7 +14,7 @@ class StationarityTests:
         self.isStationary      = None     
         
         
-    def ADF(self, timeseries, verbose = True):
+    def ADF(self, timeseries, printResults = True):
         # Augmented Dickey-Fuller test
         adfTest = adfuller(timeseries, autolag = 'BIC')
         # p-value
@@ -32,7 +32,7 @@ class StationarityTests:
             
             
             
-        if (verbose == True):   
+        if (printResults == True):   
             print('* Augmented Dickey-Fuller test *')
             print(dfResults)
         
@@ -51,7 +51,7 @@ class StationarityTests:
     
     
     
-    def KPSS(self, timeseries, verbose = True):
+    def KPSS(self, timeseries, printResults = True):
         # Kwiatkowski–Phillips–Schmidt–Shin test
         kpsstest = kpss(timeseries, regression='c')
         # p-value
@@ -67,7 +67,7 @@ class StationarityTests:
             
             
             
-        if (verbose == True):
+        if (printResults == True):
             print('* Kwiatkowski–Phillips–Schmidt–Shin test *')
             print(kpss_output)
                         
